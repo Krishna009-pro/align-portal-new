@@ -9,49 +9,77 @@
 ## 3) Architecture Diagram
 
 ```mermaid
-flowchart LR
-  U1[Employee User]
-  U2[Manager User]
+flowchart TB
+  %% Users
+  EU[Employee User]
+  MU[Manager User]
 
-  subgraph FE[Next.js 16 App Router Frontend]
-    P1[Auth Pages\n/login]
-    P2[Employee Pages\n/dashboard\n/goals\n/check-in]
-    P3[Manager Pages\n/team\n/team/review-goals\n/team/review-checkin]
-    C1[Client Firebase SDK\nsrc/lib/firebase/client.ts]
-    S1[Session & Route Protection\nsrc/lib/session.ts\nsrc/hooks/useProtectedSession.ts]
+  %% Platform Edge
+  subgraph VERCEL[Vercel Hosting Platform]
+    EDGE[Vercel Edge Network / CDN]
+
+    subgraph NEXTAPP[Next.js 16 Application]
+      ROUTER[App Router\nsrc/app/*]
+
+      subgraph UI[Presentation Layer]
+        AUTHUI[Auth UI\n/login]
+        EMPUI[Employee UI\n/dashboard, /goals, /check-in]
+        MGRUI[Manager UI\n/team, /review-goals, /review-checkin]
+      end
+
+      subgraph CLIENT[Client Runtime]
+        CLIENTSDK[Firebase Client SDK\nsrc/lib/firebase/client.ts]
+        SESSION[Session Guard & Hooks\nsrc/lib/session.ts\nsrc/hooks/useProtectedSession.ts]
+        STORE[Zustand Store\nsrc/store/wizardStore.ts]
+      end
+
+      subgraph SERVER[Server Runtime]
+        API_GOALS[API Route: /api/goals]
+        API_HEALTH[API Route: /api/firebase/health]
+        ADMINSDK[Firebase Admin SDK\nsrc/lib/firebase/admin.ts]
+      end
+    end
   end
 
-  subgraph BE[Next.js Server/API Layer]
-    A1[/api/goals]
-    A2[/api/firebase/health]
-    C2[Firebase Admin SDK\nsrc/lib/firebase/admin.ts]
+  %% External Services
+  subgraph FIREBASE[Google Firebase]
+    FAUTH[Firebase Authentication]
+    FSTORE[Cloud Firestore]
   end
 
-  subgraph FB[Firebase]
-    F1[Firebase Authentication]
-    F2[Cloud Firestore]
+  subgraph CONFIG[Runtime Configuration]
+    ENV[Environment Variables\nNEXT_PUBLIC_* and FIREBASE_*]
   end
 
-  U1 --> P2
-  U2 --> P3
-  U1 --> P1
-  U2 --> P1
+  %% Traffic Flow
+  EU --> EDGE
+  MU --> EDGE
+  EDGE --> ROUTER
 
-  P1 --> C1
-  P2 --> C1
-  P3 --> C1
-  P2 --> S1
-  P3 --> S1
+  ROUTER --> AUTHUI
+  ROUTER --> EMPUI
+  ROUTER --> MGRUI
 
-  P2 --> A1
-  P3 --> A1
-  A2 --> C2
-  A1 --> C2
+  AUTHUI --> CLIENTSDK
+  EMPUI --> CLIENTSDK
+  MGRUI --> CLIENTSDK
 
-  C1 --> F1
-  C1 --> F2
-  C2 --> F1
-  C2 --> F2
+  EMPUI --> SESSION
+  MGRUI --> SESSION
+  EMPUI --> STORE
+
+  EMPUI --> API_GOALS
+  MGRUI --> API_GOALS
+  API_HEALTH --> ADMINSDK
+  API_GOALS --> ADMINSDK
+
+  CLIENTSDK --> FAUTH
+  CLIENTSDK --> FSTORE
+  ADMINSDK --> FAUTH
+  ADMINSDK --> FSTORE
+
+  ENV --> CLIENTSDK
+  ENV --> ADMINSDK
 ```
 
 ## Notes
