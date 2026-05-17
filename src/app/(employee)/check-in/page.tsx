@@ -1,144 +1,35 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import { AdminEmployeeSidebar } from "@/components/admin-employee-sidebar";
+import { AdminEmployeeTopBar } from "@/components/admin-employee-topbar";
+import {
+  ADMIN_EMPLOYEE_HEADERS,
+} from "@/lib/admin-employee-ui";
+import { logoutUser } from "@/lib/logout";
+import { useProtectedSession } from "@/hooks/useProtectedSession";
+import { useRouter } from "next/navigation";
 
 export default function Q1CheckInPage() {
+  const router = useRouter();
+  const { session, isLoading } = useProtectedSession(["employee", "admin"]);
   const [activeQuarter, setActiveQuarter] = useState("Q1");
+
+  const handleSignOut = async () => {
+    await logoutUser();
+    router.replace("/login");
+  };
+
+  if (isLoading) {
+    return <main className="p-6">Loading...</main>;
+  }
+
   return (
     <div className="bg-[#F8FAFC] text-on-background min-h-screen flex">
-      {/* SideNavBar */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-surface border-r border-outline-variant flex flex-col py-6 z-50">
-        <div className="px-6 mb-8 flex items-center gap-3">
-          <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
-            <span
-              className="material-symbols-outlined"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              account_tree
-            </span>
-          </div>
-          <div>
-            <h1 className="font-headline-md text-headline-md font-bold text-primary">
-              Align Enterprise
-            </h1>
-            <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
-              Global Strategy
-            </p>
-          </div>
-        </div>
-        <nav className="flex-1 space-y-1 px-3">
-          <Link
-            className="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg transition-all font-label-md text-label-md"
-            href="/"
-          >
-            <span className="material-symbols-outlined">dashboard</span> Dashboard
-          </Link>
-          <Link
-            className="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg transition-all font-label-md text-label-md"
-            href="/goals"
-          >
-            <span
-              className="material-symbols-outlined"
-              style={{ fontVariationSettings: "'FILL' 0" }}
-            >
-              ads_click
-            </span>{" "}
-            My Goals
-          </Link>
-          <Link
-            className="flex items-center gap-3 px-3 py-2 bg-primary text-on-primary border-l-4 border-primary-fixed rounded-r-lg shadow-sm font-label-md text-label-md"
-            href="/check-in"
-          >
-            <span className="material-symbols-outlined">fact_check</span>{" "}
-            Check-ins
-          </Link>
-          <Link
-            className="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg transition-all font-label-md text-label-md"
-            href="#"
-          >
-            <span className="material-symbols-outlined">trending_up</span>{" "}
-            My Progress
-          </Link>
-        </nav>
-        <div className="px-6 mt-auto">
-          <div className="space-y-1 border-t border-outline-variant pt-4">
-            <Link
-              className="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md"
-              href="#"
-            >
-              <span className="material-symbols-outlined">help</span> Support
-            </Link>
-            <Link
-              className="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md"
-              href="/login"
-            >
-              <span className="material-symbols-outlined">logout</span> Sign Out
-            </Link>
-          </div>
-        </div>
-      </aside>
+      <AdminEmployeeSidebar active="checkIns" onSignOut={() => void handleSignOut()} session={session} />
 
       {/* Main Content Area */}
       <main className="ml-64 flex-1 flex flex-col min-h-screen">
-        {/* TopNavBar */}
-        <header className="h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-page-padding sticky top-0 z-40">
-          <div className="flex items-center gap-8">
-            <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary text-[20px]">
-                search
-              </span>
-              <input
-                className="pl-10 pr-4 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none w-64"
-                placeholder="Search..."
-                type="text"
-              />
-            </div>
-            <nav className="hidden md:flex items-center gap-6">
-              <Link
-                className="font-label-md text-label-md text-secondary hover:text-primary transition-colors"
-                href="/"
-              >
-                Dashboard
-              </Link>
-              <Link
-                className="font-label-md text-label-md text-primary border-b-2 border-primary pb-1"
-                href="#"
-              >
-                Strategy
-              </Link>
-              <Link
-                className="font-label-md text-label-md text-secondary hover:text-primary transition-colors"
-                href="#"
-              >
-                Performance
-              </Link>
-              <Link
-                className="font-label-md text-label-md text-secondary hover:text-primary transition-colors"
-                href="#"
-              >
-                Teams
-              </Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
-              New Goal
-            </button>
-            <button className="text-secondary hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">notifications</span>
-            </button>
-            <button className="text-secondary hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">settings</span>
-            </button>
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
-              <img
-                alt="User profile"
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB000gs4VhIpYc10l8WpFjPX0ktdb_6I0WFtWWGG-_PaU4oQk_VeOzW84A10t6cdBBgQ7jo-G0z0Udx_7BjQgOhv3cKPk_9uuqx6v4sk-woZiWFZUOialmOGKOXQ9ttq9xjTbD-fvG1z3I1pRn74wlgteEtcWGwk6SDYms7OUnZgSXM5JvwvccCCpplW2PySKvgCxPoEyabnzdS1QQAWUUUy5GFr2SlO5Mrkw4eUux8c4NlNuZ8byV0JDMMpFBxykBi0pHAwcROms"
-              />
-            </div>
-          </div>
-        </header>
+        <AdminEmployeeTopBar title={ADMIN_EMPLOYEE_HEADERS.checkInQuarter} />
 
         {/* Page Content */}
         <div className="p-page-padding max-w-[1280px] mx-auto w-full space-y-6">
@@ -146,7 +37,7 @@ export default function Q1CheckInPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-4">
               <h2 className="font-headline-lg text-headline-lg text-on-surface">
-                Q1 Check-in — July 2025
+                {ADMIN_EMPLOYEE_HEADERS.checkInQuarter}
               </h2>
               <div className="flex items-center gap-2">
                 {["Q1", "Q2", "Q3", "Q4"].map((q) => {
