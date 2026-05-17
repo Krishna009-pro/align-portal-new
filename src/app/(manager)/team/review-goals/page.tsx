@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const mockGoals = [

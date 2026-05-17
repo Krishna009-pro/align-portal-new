@@ -448,7 +448,7 @@ export default function Q1CheckInPage() {
               </div>
               <div className="bg-white/50 p-4 rounded-lg border border-secondary-container/30">
                 <p className="font-body-sm text-body-sm text-secondary italic">
-                  "Score is for tracking only and does not affect your rating"
+                  &quot;Score is for tracking only and does not affect your rating&quot;
                 </p>
               </div>
               <div className="w-full pt-4 border-t border-secondary-container/30 text-left space-y-3">
@@ -505,7 +505,7 @@ export default function Q1CheckInPage() {
                 {activeQuarter} Check-in is Locked
               </h4>
               <p className="font-body-md text-body-md text-secondary max-w-md mx-auto mb-6">
-                This quarter's check-in window is not yet open. You will be notified when it is time to submit your updates.
+                {"This quarter's check-in window is not yet open. You will be notified when it is time to submit your updates."}
               </p>
             </div>
           )}

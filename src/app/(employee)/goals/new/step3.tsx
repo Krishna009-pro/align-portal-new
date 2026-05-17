@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 export default function GoalCreationStep3() {
   const router = useRouter();
-  const { nextStep, prevStep } = useWizardStore();
+  const { prevStep } = useWizardStore();
 
   return (
     <div className="bg-background font-body-md text-on-surface min-h-screen flex flex-col">

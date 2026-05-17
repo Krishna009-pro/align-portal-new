@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 
 export default function GoalCreationStep1() {
-  const { nextStep, prevStep } = useWizardStore();
+  const { nextStep } = useWizardStore();
   return (
     <div className="flex flex-col min-h-screen text-on-background bg-background">
       {/* SideNavBar */}

@@ -514,8 +514,8 @@ export default function EmployeeDashboardPage() {
               Need help with your goals?
             </h4>
             <p className="font-body-md text-body-md text-secondary max-w-md mx-auto mb-6">
-              Review the organization's FY 2025-26 strategy guide to align your
-              individual contributions with team objectives.
+              {"Review the organization's FY 2025-26 strategy guide to align your"}
+              {" "}individual contributions with team objectives.
             </p>
             <button className="border border-primary text-primary hover:bg-primary/5 px-6 py-2 rounded-lg font-label-md text-label-md transition-all">
               View Strategy Guide

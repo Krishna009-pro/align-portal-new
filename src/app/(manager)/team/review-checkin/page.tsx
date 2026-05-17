@@ -480,7 +480,7 @@ export default function ReviewCheckinPage() {
               </h3>
             </div>
             <p className="font-body-md text-body-md text-secondary mb-6">
-              Rahul Mehta's Q1 check-in review has been successfully marked as completed. The audit history has been updated.
+              {"Rahul Mehta's Q1 check-in review has been successfully marked as completed. The audit history has been updated."}
             </p>
             <div className="flex justify-end gap-3">
               <button
