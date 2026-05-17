@@ -75,12 +75,22 @@ export default function ReviewGoalsPage() {
         {/* Sidebar Navigation */}
         <aside className="fixed left-0 top-0 h-full w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline flex flex-col py-6 z-50">
           <div className="px-6 mb-8 flex items-center gap-3">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-black text-headline-md">A</span>
+            <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+              <span
+                className="material-symbols-outlined"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                account_tree
+              </span>
             </div>
-            <h1 className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
-              Align Enterprise
-            </h1>
+            <div>
+              <h1 className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                Align Enterprise
+              </h1>
+              <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
+                Global Strategy
+              </p>
+            </div>
           </div>
           <nav className="flex-1 space-y-1 px-3">
             <Link

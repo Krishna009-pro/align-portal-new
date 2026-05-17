@@ -1,5 +1,10 @@
 import { useWizardStore } from '@/store/wizardStore';
 import Link from 'next/link';
+import {
+  ADMIN_EMPLOYEE_HEADERS,
+  ADMIN_EMPLOYEE_LABELS,
+  ADMIN_EMPLOYEE_ROUTES,
+} from "@/lib/admin-employee-ui";
 
 
 export default function GoalCreationStep2() {
@@ -8,24 +13,37 @@ export default function GoalCreationStep2() {
     <div className="flex min-h-screen bg-[#F8FAFC] text-[#1a1b23]">
       {/* SideNavBar (Authority: JSON & Style Guidance) */}
       <aside className="w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline h-screen fixed left-0 top-0 z-40 flex flex-col py-page-padding">
-        <div className="px-6 mb-8 flex items-center gap-3">
-          <span className="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">
-            Align
-          </span>
+                <div className="px-6 mb-8 flex items-center gap-3">
+          <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+            <span
+              className="material-symbols-outlined"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              account_tree
+            </span>
+          </div>
+          <div>
+            <h1 className="font-headline-md text-headline-md font-bold text-primary">
+              Align Enterprise
+            </h1>
+            <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
+              Global Strategy
+            </p>
+          </div>
         </div>
         <nav className="flex-1 px-3 space-y-1">
           <Link
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group"
-            href="/"
+            href={ADMIN_EMPLOYEE_ROUTES.dashboard}
           >
             <span className="material-symbols-outlined" data-icon="dashboard">
               dashboard
             </span>
-            <span className="font-label-md text-label-md">Dashboard</span>
+            <span className="font-label-md text-label-md">{ADMIN_EMPLOYEE_LABELS.dashboard}</span>
           </Link>
           <Link
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-l-4 border-primary dark:border-primary-fixed transition-all"
-            href="/goals"
+            href={ADMIN_EMPLOYEE_ROUTES.goals}
           >
             <span
               className="material-symbols-outlined"
@@ -34,25 +52,25 @@ export default function GoalCreationStep2() {
             >
               target
             </span>
-            <span className="font-label-md text-label-md">My Goals</span>
+            <span className="font-label-md text-label-md">{ADMIN_EMPLOYEE_LABELS.goals}</span>
           </Link>
           <Link
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group"
-            href="/check-in"
+            href={ADMIN_EMPLOYEE_ROUTES.checkIns}
           >
             <span className="material-symbols-outlined" data-icon="event_note">
               event_note
             </span>
-            <span className="font-label-md text-label-md">Check-ins</span>
+            <span className="font-label-md text-label-md">{ADMIN_EMPLOYEE_LABELS.checkIns}</span>
           </Link>
           <Link
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group"
-            href="#"
+            href={ADMIN_EMPLOYEE_ROUTES.progress}
           >
             <span className="material-symbols-outlined" data-icon="monitoring">
               monitoring
             </span>
-            <span className="font-label-md text-label-md">My Progress</span>
+            <span className="font-label-md text-label-md">{ADMIN_EMPLOYEE_LABELS.progress}</span>
           </Link>
         </nav>
         <div className="mt-auto px-4 border-t border-outline-variant pt-4 mx-2">
@@ -89,7 +107,7 @@ export default function GoalCreationStep2() {
         <header className="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline h-16 flex justify-between items-center px-page-padding sticky top-0 z-30">
           <div className="flex items-center gap-4">
             <h1 className="font-headline-md text-headline-md font-bold text-on-surface">
-              My Goals — FY 2025-26
+              {ADMIN_EMPLOYEE_HEADERS.goals}
             </h1>
             <span className="badge-base bg-green-100 text-green-700 rounded-full px-3 py-1 flex items-center gap-1.5 font-bold uppercase text-[11px]">
               <div className="w-2 h-2 rounded-full bg-green-500"></div>
@@ -437,3 +455,4 @@ export default function GoalCreationStep2() {
     </div>
   );
 }
+

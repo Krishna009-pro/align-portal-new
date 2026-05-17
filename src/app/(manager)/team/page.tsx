@@ -6,13 +6,23 @@ export default function ManagerTeamPage() {
     <div className="bg-[#F8FAFC] text-on-surface font-body-md min-h-screen">
       {/* Shared SideNavBar */}
       <aside className="fixed h-full w-64 left-0 top-0 bg-surface border-r border-outline-variant shadow-sm flex flex-col py-page-padding z-50">
-        <div className="px-6 mb-10">
-          <h1 className="font-headline-lg text-headline-lg font-bold text-primary">
-            Align
-          </h1>
-          <p className="font-label-sm text-label-sm text-secondary">
-            Enterprise Portal
-          </p>
+        <div className="px-6 mb-8 flex items-center gap-3">
+          <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+            <span
+              className="material-symbols-outlined"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              account_tree
+            </span>
+          </div>
+          <div>
+            <h1 className="font-headline-md text-headline-md font-bold text-primary">
+              Align Enterprise
+            </h1>
+            <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
+              Global Strategy
+            </p>
+          </div>
         </div>
         <nav className="flex-1 space-y-1">
           <Link

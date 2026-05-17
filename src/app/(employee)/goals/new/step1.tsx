@@ -1,5 +1,10 @@
 import { useWizardStore } from '@/store/wizardStore';
 import Link from 'next/link';
+import {
+  ADMIN_EMPLOYEE_HEADERS,
+  ADMIN_EMPLOYEE_LABELS,
+  ADMIN_EMPLOYEE_ROUTES,
+} from "@/lib/admin-employee-ui";
 
 
 export default function GoalCreationStep1() {
@@ -8,28 +13,38 @@ export default function GoalCreationStep1() {
     <div className="flex flex-col min-h-screen text-on-background bg-background">
       {/* SideNavBar */}
       <aside className="fixed left-0 top-0 h-screen w-64 bg-surface border-r border-outline-variant flex flex-col py-page-padding gap-stack-gap shadow-sm z-50">
-        <div className="px-6 mb-8">
-          <h1 className="font-headline-md text-headline-md font-black text-primary">
-            Align
-          </h1>
-          <p className="text-[10px] uppercase tracking-widest text-secondary font-bold">
-            Enterprise Portal
-          </p>
+                <div className="px-6 mb-8 flex items-center gap-3">
+          <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+            <span
+              className="material-symbols-outlined"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              account_tree
+            </span>
+          </div>
+          <div>
+            <h1 className="font-headline-md text-headline-md font-bold text-primary">
+              Align Enterprise
+            </h1>
+            <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
+              Global Strategy
+            </p>
+          </div>
         </div>
         <nav className="flex-1 px-4 space-y-1">
           <Link
             className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-all duration-200 rounded-lg font-label-md text-label-md"
-            href="/"
+            href={ADMIN_EMPLOYEE_ROUTES.dashboard}
           >
             <span className="material-symbols-outlined" data-icon="dashboard">
               dashboard
             </span>
-            <span>Dashboard</span>
+            <span>{ADMIN_EMPLOYEE_LABELS.dashboard}</span>
           </Link>
           {/* Active State */}
           <Link
             className="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary border-l-4 border-on-primary-fixed-variant rounded-r-lg font-label-md text-label-md shadow-sm"
-            href="/goals"
+            href={ADMIN_EMPLOYEE_ROUTES.goals}
           >
             <span
               className="material-symbols-outlined"
@@ -38,25 +53,25 @@ export default function GoalCreationStep1() {
             >
               track_changes
             </span>
-            <span>My Goals</span>
+            <span>{ADMIN_EMPLOYEE_LABELS.goals}</span>
           </Link>
           <Link
             className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-all duration-200 rounded-lg font-label-md text-label-md"
-            href="/check-in"
+            href={ADMIN_EMPLOYEE_ROUTES.checkIns}
           >
             <span className="material-symbols-outlined" data-icon="fact_check">
               fact_check
             </span>
-            <span>Check-ins</span>
+            <span>{ADMIN_EMPLOYEE_LABELS.checkIns}</span>
           </Link>
           <Link
             className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-all duration-200 rounded-lg font-label-md text-label-md"
-            href="#"
+            href={ADMIN_EMPLOYEE_ROUTES.progress}
           >
             <span className="material-symbols-outlined" data-icon="trending_up">
               trending_up
             </span>
-            <span>My Progress</span>
+            <span>{ADMIN_EMPLOYEE_LABELS.progress}</span>
           </Link>
         </nav>
         <div className="px-4 mt-auto space-y-1 border-t border-outline-variant pt-4">
@@ -101,7 +116,7 @@ export default function GoalCreationStep1() {
               </span>
             </button>
             <h2 className="font-headline-lg text-headline-lg font-bold text-primary">
-              Create New Goal
+              {ADMIN_EMPLOYEE_HEADERS.createGoal}
             </h2>
           </div>
           <div className="flex items-center gap-4">

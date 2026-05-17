@@ -11,13 +11,23 @@ export default function ReviewCheckinPage() {
     <div className="bg-background text-on-background min-h-screen">
       {/* SideNavBar (Shared Component) */}
       <aside className="fixed left-0 top-0 h-screen w-64 z-40 bg-surface-container dark:bg-surface-dim border-r border-outline-variant dark:border-outline flex flex-col py-page-padding space-y-stack-gap">
-        <div className="px-6 mb-8">
-          <h1 className="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tight">
-            Align
-          </h1>
-          <p className="text-[10px] uppercase tracking-widest text-outline font-bold">
-            Enterprise Portal
-          </p>
+        <div className="px-6 mb-8 flex items-center gap-3">
+          <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+            <span
+              className="material-symbols-outlined"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              account_tree
+            </span>
+          </div>
+          <div>
+            <h1 className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+              Align Enterprise
+            </h1>
+            <p className="text-[10px] uppercase tracking-wider text-secondary font-bold">
+              Global Strategy
+            </p>
+          </div>
         </div>
         <nav className="flex-1 px-3 space-y-1">
           <Link
