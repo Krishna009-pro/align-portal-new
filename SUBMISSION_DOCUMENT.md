@@ -1,10 +1,10 @@
 # Project Submission Document
 
 ## 1) Working Link (Dummy)
-- https://align-portal-demo.example.com
+- https://align-portal-new.vercel.app/
 
 ## 2) Source Code Repository (Dummy)
-- https://github.com/example-org/align-portal-new
+- https://github.com/Krishna009-pro/align-portal-new
 
 ## 3) Architecture Diagram
 
