@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Align | Goal Sheet Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface": "#faf8ff",
+                        "on-primary-fixed": "#001551",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1b23",
+                        "secondary": "#505f76",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#d0e1fb",
+                        "primary": "#0037b0",
+                        "inverse-primary": "#b7c4ff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c4c5d7",
+                        "surface-container-highest": "#e2e1ed",
+                        "tertiary-container": "#a73400",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbcf",
+                        "tertiary": "#7f2500",
+                        "surface-bright": "#faf8ff",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-secondary-container": "#54647a",
+                        "on-surface": "#1a1b23",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1d4ed8",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed": "#dce1ff",
+                        "secondary-fixed": "#d3e4fe",
+                        "outline": "#747686",
+                        "background": "#faf8ff",
+                        "surface-container-low": "#f3f2fe",
+                        "on-tertiary-container": "#ffc9b7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#2151da",
+                        "surface-container-high": "#e8e7f3",
+                        "on-secondary-fixed": "#0b1c30",
+                        "inverse-surface": "#2e3039",
+                        "surface-dim": "#d9d9e5",
+                        "surface-variant": "#e2e1ed",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-surface-variant": "#434655",
+                        "surface-container": "#ededf9",
+                        "on-primary-container": "#cad3ff",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "primary-fixed-dim": "#b7c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "8px",
+                        "page-padding": "24px",
+                        "card-padding": "16px",
+                        "element-gap": "12px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-on-background antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="text-white font-black text-headline-md">A</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Align Enterprise</h1>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-l-4 border-primary-fixed rounded-r-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">ads_click</span>
+<span>My Goals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span>Organization</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="px-3 pt-6 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-secondary hover:bg-surface-container-low rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-outline-variant h-16 flex items-center justify-between px-page-padding shrink-0 z-40">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg font-extrabold text-primary">Manager Dashboard</h2>
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1.5">
+<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Q1 Window Open
+                    </span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Manager profile" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate manager with a friendly expression, wearing a navy blue blazer and a crisp white shirt. The background is a blurred high-end office setting with soft, natural lighting that emphasizes a clean, modern aesthetic consistent with an enterprise software portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY658XNjl5W65BtukzLj8zvEQbGoe62xfBrb3_SdqgBTIfLDeN3eNSkf6fJM33KQbaB_LLbmiOHMV8Qjc1k_QK99VydUcLPYBfD-N-Lvm13yno_FBdgARVoP9TLZPkpbtqbBemqekb_tOsPl2b-yjodTZ-mdyeFQHA_49VTjvwzsbCdzC5BiuPw-qAzC_uy0ig6KHW41moU5lViwIhBCWtJlMAwvJAm4UZA1h-o22-Jb66RfUJ7iCXWHJtfAu7g5rstmh5xLL8rl0"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Body -->
+<div class="flex-1 overflow-y-auto bg-slate-50 p-page-padding space-y-6 pb-32">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<a class="hover:text-primary" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">My Team</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Rahul Mehta</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Goal Sheet Review</span>
+</nav>
+<!-- Employee Info Card -->
+<section class="bg-white rounded-lg border border-outline-variant shadow-sm p-5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white font-bold text-headline-md shadow-inner">
+                            RM
+                        </div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Rahul Mehta</h3>
+<p class="font-body-md text-body-md text-secondary">Sales Department · Reports to: <span class="font-medium">Priya Kapoor</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-secondary">Submitted: 28 Apr 2025</span>
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full font-label-md text-label-md">FY 2025-26 — Goal Setting</span>
+</div>
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-label-md text-label-md font-bold">5 Goals · 100% Weightage</span>
+</div>
+</section>
+<!-- Main Content Card -->
+<section class="bg-white rounded-lg border border-outline-variant shadow-sm flex flex-col overflow-hidden">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-white">
+<h4 class="font-headline-md text-headline-md text-on-surface">Goal Sheet Review — <span class="text-primary font-medium">Inline Editing Enabled</span></h4>
+</div>
+<div class="p-5 bg-amber-50 border-b border-amber-100 flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-600">info</span>
+<p class="font-body-md text-body-md text-amber-800">You can edit Target and Weightage directly in the table. All edits are logged to the audit trail for compliance and tracking.</p>
+</div>
+<!-- Editable Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 text-secondary font-label-md text-label-md border-b border-outline-variant">
+<th class="px-5 py-3 w-12">#</th>
+<th class="px-5 py-3">Thrust Area</th>
+<th class="px-5 py-3 w-1/3">Goal Title</th>
+<th class="px-5 py-3">UoM</th>
+<th class="px-5 py-3">Target</th>
+<th class="px-5 py-3 w-28">Weightage</th>
+<th class="px-5 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 text-secondary">1</td>
+<td class="px-5 py-4 font-medium text-primary">Sales</td>
+<td class="px-5 py-4">Achieve Revenue Target</td>
+<td class="px-5 py-4">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-label-md text-[10px] font-bold">MIN</span>
+</td>
+<td class="px-5 py-4">
+<input class="w-full bg-blue-50 border-primary border-2 rounded px-2 py-1.5 focus:outline-none focus:ring-0 text-on-surface font-semibold shadow-inner" type="text" value="₹50,00,000"/>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="30%"/>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 text-secondary">2</td>
+<td class="px-5 py-4 font-medium text-tertiary">Operations</td>
+<td class="px-5 py-4">Reduce Customer TAT</td>
+<td class="px-5 py-4">
+<span class="bg-error/10 text-error px-2 py-0.5 rounded font-label-md text-[10px] font-bold">MAX</span>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="3 days"/>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="25%"/>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 text-secondary">3</td>
+<td class="px-5 py-4 font-medium text-green-700">Compliance</td>
+<td class="px-5 py-4">Zero Safety Incidents</td>
+<td class="px-5 py-4">
+<span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-label-md text-[10px] font-bold">ZERO</span>
+</td>
+<td class="px-5 py-4">
+<div class="w-full bg-slate-100 text-secondary border border-outline-variant rounded px-2 py-1.5 font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lock</span> 0
+                                        </div>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="20%"/>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 text-secondary">4</td>
+<td class="px-5 py-4 font-medium text-purple-700">HR</td>
+<td class="px-5 py-4">Training Completion</td>
+<td class="px-5 py-4">
+<span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded font-label-md text-[10px] font-bold">TIMELINE</span>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="30-Jun-2025"/>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="15%"/>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-5 py-4 text-secondary">5</td>
+<td class="px-5 py-4 font-medium text-red-700">Quality</td>
+<td class="px-5 py-4">Reduce Defect Rate</td>
+<td class="px-5 py-4">
+<span class="bg-error/10 text-error px-2 py-0.5 rounded font-label-md text-[10px] font-bold">MAX</span>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="2%"/>
+</td>
+<td class="px-5 py-4">
+<input class="w-full border-outline-variant border rounded px-2 py-1.5 focus:border-primary focus:ring-0 text-on-surface" type="text" value="10%"/>
+</td>
+<td class="px-5 py-4 text-right">
+<button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-slate-50 border-t border-outline-variant flex justify-end items-center">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-secondary">Total Weightage:</span>
+<span class="font-headline-md text-headline-md text-green-700">100% ✓</span>
+</div>
+</div>
+</section>
+<!-- Manager Notes Section -->
+<section class="bg-white rounded-lg border border-outline-variant shadow-sm p-5 space-y-3">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider" for="manager-notes">Rejection Reason / Notes</label>
+<textarea class="w-full border-outline-variant border rounded-lg p-4 focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" id="manager-notes" placeholder="Add feedback for the employee here. This will be visible if goals are returned for rework." rows="4"></textarea>
+</section>
+</div>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-64 right-0 h-20 bg-white border-t border-outline-variant shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] px-page-padding flex items-center justify-between z-40">
+<div class="flex-1">
+<a class="flex items-center gap-1.5 text-primary hover:underline font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back to Team
+                    </a>
+</div>
+<div class="flex-1 flex justify-center">
+<button class="px-6 py-2.5 border border-error text-error font-label-md text-label-md rounded-lg hover:bg-error/5 transition-colors">
+                        Return for Rework
+                    </button>
+</div>
+<div class="flex-1 flex flex-col items-end gap-1">
+<button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-headline-md text-headline-md flex items-center gap-2 shadow-lg shadow-green-200 transition-all active:scale-95">
+                        Approve Goal Sheet 
+                        <span class="material-symbols-outlined">check_circle</span>
+</button>
+<p class="font-label-sm text-label-sm text-secondary">Goals will be locked and employee notified</p>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

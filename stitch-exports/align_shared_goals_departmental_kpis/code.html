@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shared Goals — Departmental KPIs | Align</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#faf8ff",
+                    "on-tertiary-fixed": "#390c00",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed": "#001551",
+                    "surface-variant": "#e2e1ed",
+                    "on-secondary-fixed": "#0b1c30",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "primary-container": "#1d4ed8",
+                    "primary-fixed": "#dce1ff",
+                    "on-tertiary-container": "#ffc9b7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#54647a",
+                    "tertiary": "#7f2500",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c5d7",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "surface-tint": "#2151da",
+                    "secondary": "#505f76",
+                    "surface-container-high": "#e8e7f3",
+                    "on-surface": "#1a1b23",
+                    "tertiary-fixed": "#ffdbcf",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "surface-bright": "#faf8ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed-variant": "#0039b5",
+                    "on-background": "#1a1b23",
+                    "surface-container-low": "#f3f2fe",
+                    "primary": "#0037b0",
+                    "surface-dim": "#d9d9e5",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2e3039",
+                    "inverse-primary": "#b7c4ff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#a73400",
+                    "outline": "#747686",
+                    "surface": "#faf8ff",
+                    "secondary-container": "#d0e1fb",
+                    "on-primary-container": "#cad3ff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#ededf9",
+                    "surface-container-highest": "#e2e1ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "element-gap": "12px",
+                    "page-padding": "24px",
+                    "card-padding": "16px",
+                    "section-gap": "32px",
+                    "stack-gap": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .flat-card {
+            background-color: #ffffff;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar (Predicted Component) -->
+<aside class="w-[220px] h-screen fixed left-0 top-0 flex flex-col py-page-padding bg-surface border-r border-outline-variant transition-all duration-200 ease-in-out">
+<div class="px-6 mb-8">
+<h1 class="text-headline-lg font-headline-lg font-bold text-primary">Align</h1>
+<p class="text-label-sm text-secondary uppercase tracking-widest mt-1">Enterprise Portal</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 text-secondary hover:bg-surface-container-high px-6 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Employees -->
+<a class="flex items-center gap-3 text-secondary hover:bg-surface-container-high px-6 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-md font-label-md">Employees</span>
+</a>
+<!-- Goal Cycles -->
+<a class="flex items-center gap-3 text-secondary hover:bg-surface-container-high px-6 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+<span class="text-label-md font-label-md">Goal Cycles</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 text-secondary hover:bg-surface-container-high px-6 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<!-- Audit Log -->
+<a class="flex items-center gap-3 text-secondary hover:bg-surface-container-high px-6 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-label-md font-label-md">Audit Log</span>
+</a>
+<!-- Shared Goals (Active) -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container font-semibold border-l-4 border-primary px-6 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="text-label-md font-label-md">Shared Goals</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative">
+<img alt="Admin Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary/20" data-alt="A professional headshot of a middle-aged South Asian man with a friendly, confident expression. He is wearing a sharp navy blue business suit against a soft, out-of-focus modern office background. The lighting is bright and professional, adhering to a high-end corporate aesthetic with clean lines and a premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4guDjwFBZhkQvxzF8abl7_OvxBRM1-lgqli9ZxAEcVkW0fLxb5nPXAnXCqX-ZoZA7X5lLWwFI7GiPyy4dUxK-N3oB_7tvSwTLE8HfZ1PGUpRxvgR4Vp2B2ZGpRVR78gXlfJl761fXrjDy6yEx379s7-fnVL9LpNDuo11tyJlW0WKaMDCP1teiAaDdvQaaaTHGinGdqYEQ0fI6Qo-SWr7ONUDsj_AZ7qKIxXl8TsyyQUzj5nI5BPb6vzp3fZKAaOMPMWEoSUPM96Q"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-purple-600 border-2 border-white rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-on-surface">Raj Sharma</span>
+<span class="text-[10px] text-secondary uppercase font-bold tracking-tighter">Admin Profile</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar (Predicted Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-220px)] h-16 flex justify-between items-center px-page-padding bg-background/80 backdrop-blur-md border-b border-outline-variant z-10">
+<div class="flex flex-col">
+<h2 class="text-headline-md font-headline-md text-on-surface">Shared Goals — Departmental KPIs</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                Push New Shared Goal
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[220px] pt-24 pb-12 px-page-padding max-w-[1200px]">
+<!-- Page Introduction -->
+<div class="mb-section-gap">
+<p class="text-body-md text-secondary max-w-2xl">
+                Push a departmental KPI to multiple employees. Recipients can only adjust their weightage while the goal title and target remain fixed to ensure organizational alignment.
+            </p>
+</div>
+<div class="grid grid-cols-12 gap-section-gap">
+<!-- Left Column: Active Goals Feed -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-md font-headline-md text-on-surface">Active Shared Goals <span class="text-secondary font-normal">— FY 2025-26 (3 goals)</span></h3>
+</div>
+<!-- Goal Card 1 -->
+<div class="flat-card border-l-4 border-l-primary p-card-padding flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider border border-green-200">ZERO</span>
+<span class="text-label-md text-secondary">Compliance Thrust Area</span>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Safety Excellence</h4>
+<p class="text-body-sm text-secondary">"Zero safety incidents across all departments"</p>
+</div>
+<div class="text-right">
+<p class="text-label-sm text-outline">Shared by: Raj Sharma</p>
+<p class="text-label-sm text-outline">1 May 2025</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-2 bg-surface-container-low rounded-lg px-4">
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Target</p>
+<p class="text-body-md font-bold text-on-surface">0 incidents</p>
+</div>
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Pushed To</p>
+<p class="text-body-md font-bold text-on-surface">48 employees</p>
+</div>
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Acceptance</p>
+<p class="text-body-md font-bold text-green-700">44/48 accepted</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="h-2 w-full bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-green-600 rounded-full" style="width: 91.6%"></div>
+</div>
+</div>
+<div class="flex gap-element-gap mt-2">
+<button class="flex-1 py-2 rounded border border-outline-variant text-label-md font-semibold text-secondary hover:bg-surface-container-high transition-colors">View Details</button>
+<button class="flex-1 py-2 rounded border border-primary text-label-md font-semibold text-primary hover:bg-primary-fixed transition-colors">Edit</button>
+</div>
+</div>
+<!-- Goal Card 2 -->
+<div class="flat-card border-l-4 border-l-primary p-card-padding flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="bg-purple-50 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider border border-purple-200">TIMELINE</span>
+<span class="text-label-md text-secondary">HR Thrust Area</span>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Annual Training Completion</h4>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-2 bg-surface-container-low rounded-lg px-4">
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Target</p>
+<p class="text-body-md font-bold text-on-surface">30-Jun-2025</p>
+</div>
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Pushed To</p>
+<p class="text-body-md font-bold text-on-surface">12 (IT dept)</p>
+</div>
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Acceptance</p>
+<p class="text-body-md font-bold text-green-700">100% accepted</p>
+</div>
+</div>
+<div class="h-2 w-full bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-green-600 rounded-full" style="width: 100%"></div>
+</div>
+<div class="flex gap-element-gap mt-2">
+<button class="flex-1 py-2 rounded border border-outline-variant text-label-md font-semibold text-secondary hover:bg-surface-container-high transition-colors">View Details</button>
+<button class="flex-1 py-2 rounded border border-primary text-label-md font-semibold text-primary hover:bg-primary-fixed transition-colors">Edit</button>
+</div>
+</div>
+<!-- Goal Card 3 -->
+<div class="flat-card border-l-4 border-l-amber-500 p-card-padding flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider border border-blue-200">MIN</span>
+<span class="text-label-md text-secondary">Sales Thrust Area</span>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Customer Satisfaction Score</h4>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-2 bg-surface-container-low rounded-lg px-4">
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Target</p>
+<p class="text-body-md font-bold text-on-surface">4.2/5 rating</p>
+</div>
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Pushed To</p>
+<p class="text-body-md font-bold text-on-surface">8 employees</p>
+</div>
+<div class="flex items-center gap-2">
+<div>
+<p class="text-label-sm text-secondary uppercase tracking-tighter">Acceptance</p>
+<p class="text-body-md font-bold text-amber-700">5/8 accepted</p>
+</div>
+<span class="material-symbols-outlined text-amber-600 text-sm" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between">
+<span class="text-label-sm text-amber-700 font-bold">3 pending reminder</span>
+</div>
+<div class="h-2 w-full bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<div class="flex gap-element-gap mt-2">
+<button class="flex-1 py-2 rounded border border-outline-variant text-label-md font-semibold text-secondary hover:bg-surface-container-high transition-colors">View Details</button>
+<button class="flex-1 py-2 rounded bg-amber-500 text-white text-label-md font-semibold hover:bg-amber-600 transition-colors shadow-sm">Send Reminder</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Form Panel -->
+<div class="col-span-12 lg:col-span-5">
+<div class="flat-card p-6 sticky top-24">
+<h3 class="text-headline-md font-bold text-on-surface mb-4">Push a Departmental KPI</h3>
+<form class="flex flex-col gap-5">
+<!-- Thrust Area -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface font-semibold">Thrust Area</label>
+<select class="w-full h-10 px-3 rounded-lg border-outline-variant text-body-md focus:ring-primary focus:border-primary">
+<option>Sales</option>
+<option>HR</option>
+<option>IT</option>
+<option>Finance</option>
+<option>Compliance</option>
+</select>
+</div>
+<!-- Goal Title -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface font-semibold">Goal Title</label>
+<input class="w-full h-10 px-3 rounded-lg border-outline-variant text-body-md focus:ring-primary focus:border-primary" placeholder="e.g. Reduce server downtime" type="text"/>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface font-semibold">Description</label>
+<textarea class="w-full p-3 rounded-lg border-outline-variant text-body-md focus:ring-primary focus:border-primary" placeholder="Briefly describe the objective..." rows="2"></textarea>
+</div>
+<!-- UoM Type Radio Cards -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface font-semibold">UoM Type</label>
+<div class="grid grid-cols-4 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer hidden" name="uom" type="radio"/>
+<div class="flex flex-col items-center justify-center p-2 border border-outline-variant rounded-lg text-center peer-checked:border-primary peer-checked:bg-primary-fixed hover:bg-surface-container-low transition-all">
+<span class="text-[10px] font-bold text-blue-700">MIN</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="uom" type="radio"/>
+<div class="flex flex-col items-center justify-center p-2 border border-outline-variant rounded-lg text-center peer-checked:border-primary peer-checked:bg-primary-fixed hover:bg-surface-container-low transition-all">
+<span class="text-[10px] font-bold text-error">MAX</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="uom" type="radio"/>
+<div class="flex flex-col items-center justify-center p-2 border border-outline-variant rounded-lg text-center peer-checked:border-primary peer-checked:bg-primary-fixed hover:bg-surface-container-low transition-all">
+<span class="text-[10px] font-bold text-purple-700">TIME</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="uom" type="radio"/>
+<div class="flex flex-col items-center justify-center p-2 border border-outline-variant rounded-lg text-center peer-checked:border-primary peer-checked:bg-primary-fixed hover:bg-surface-container-low transition-all">
+<span class="text-[10px] font-bold text-green-700">ZERO</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Target Value -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface font-semibold">Target Value</label>
+<input class="w-full h-10 px-3 rounded-lg border-outline-variant text-body-md focus:ring-primary focus:border-primary" placeholder="Value or Date" type="text"/>
+</div>
+<!-- Push To Section -->
+<div class="flex flex-col gap-3 mt-2">
+<label class="text-label-md text-on-surface font-semibold">Push To</label>
+<div class="flex border-b border-outline-variant">
+<button class="px-4 py-2 text-label-md font-bold text-primary border-b-2 border-primary" type="button">By Department</button>
+<button class="px-4 py-2 text-label-md font-semibold text-secondary hover:text-primary transition-colors" type="button">Individual Employees</button>
+</div>
+<div class="flex flex-col gap-2 max-h-[160px] overflow-y-auto p-2">
+<div class="flex items-center justify-between py-1 border-b border-outline-variant mb-1">
+<span class="text-label-md text-secondary font-semibold">Select All</span>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<label class="flex items-center justify-between cursor-pointer hover:bg-surface-container-low p-1 rounded">
+<span class="text-body-md text-on-surface">Sales (8)</span>
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-surface-container-low p-1 rounded">
+<span class="text-body-md text-on-surface">HR (12)</span>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-surface-container-low p-1 rounded">
+<span class="text-body-md text-on-surface">IT (6)</span>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer hover:bg-surface-container-low p-1 rounded">
+<span class="text-body-md text-on-surface">Finance (9)</span>
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Info Box -->
+<div class="bg-blue-50 border border-blue-100 p-3 rounded-lg flex gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="info">info</span>
+<p class="text-label-sm text-on-secondary-fixed-variant leading-relaxed">
+<span class="font-bold">Note:</span> Recipients can only adjust weightage. Goal title and target are read-only for employees to maintain performance standards.
+                            </p>
+</div>
+<button class="w-full py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg text-label-md font-bold transition-all shadow-md active:scale-[0.98]" type="submit">
+                            Push to Selected Employees
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body></html>

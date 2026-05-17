@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface-container-low": "#f3f2fe",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-tertiary-container": "#ffc9b7",
+                        "inverse-primary": "#b7c4ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "tertiary-fixed": "#ffdbcf",
+                        "outline-variant": "#c4c5d7",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "surface-container-highest": "#e2e1ed",
+                        "primary": "#0037b0",
+                        "surface-container": "#ededf9",
+                        "primary-fixed": "#dce1ff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1b23",
+                        "on-secondary-fixed": "#0b1c30",
+                        "background": "#faf8ff",
+                        "surface-container-high": "#e8e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d0e1fb",
+                        "surface-dim": "#d9d9e5",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary": "#505f76",
+                        "outline": "#747686",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "tertiary": "#7f2500",
+                        "tertiary-container": "#a73400",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#cad3ff",
+                        "on-surface": "#1a1b23",
+                        "surface-variant": "#e2e1ed",
+                        "primary-container": "#1d4ed8",
+                        "surface-tint": "#2151da",
+                        "on-secondary-container": "#54647a",
+                        "on-primary-fixed": "#001551",
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "on-surface-variant": "#434655",
+                        "inverse-surface": "#2e3039"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-padding": "24px",
+                        "section-gap": "32px",
+                        "card-padding": "16px",
+                        "stack-gap": "8px",
+                        "element-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- Background Layer: SideNavBar & Audit Log Content (Blurred) -->
+<div class="flex min-h-screen blur-[2px] pointer-events-none select-none overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[220px] bg-surface shadow-sm flex flex-col py-page-padding z-10 border-r border-outline-variant">
+<div class="px-6 mb-8">
+<h1 class="text-headline-md font-headline-md font-black text-primary">Align Portal</h1>
+<p class="font-label-sm text-label-sm text-secondary">Enterprise Admin</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">dashboard</span> Dashboard
+                </div>
+<div class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">group</span> Employees
+                </div>
+<div class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">cycle</span> Goal Cycles
+                </div>
+<div class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">assessment</span> Reports
+                </div>
+<!-- Active Item -->
+<div class="flex items-center px-6 py-3 bg-primary text-on-primary border-l-4 border-on-primary-fixed-variant font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">history</span> Audit Log
+                </div>
+<div class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined mr-3">hub</span> Shared Goals
+                </div>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-2 bg-surface-container rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">A</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Admin User</p>
+<p class="text-[10px] text-secondary">System Root</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content (Audit Log Page) -->
+<main class="ml-[220px] flex-1 flex flex-col bg-background">
+<!-- TopNavBar -->
+<header class="h-16 flex justify-between items-center px-page-padding w-full bg-background border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-primary">Audit Log — Goal Changes</h2>
+<div class="flex items-center gap-4">
+<button class="flex items-center px-4 py-2 bg-secondary-container text-on-secondary-container rounded font-label-md text-label-md">
+<span class="material-symbols-outlined mr-2">download</span> Export
+                    </button>
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</div>
+</header>
+<!-- Table Section -->
+<section class="p-page-padding overflow-hidden">
+<div class="bg-surface border border-outline-variant rounded-lg shadow-sm overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Timestamp</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Actor</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Employee</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Goal Title</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Action</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Field</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Old Value</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">New Value</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Reason</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant">12 May 2025, 09:42</td>
+<td class="p-4">Raj Sharma</td>
+<td class="p-4">Anita Desai</td>
+<td class="p-4">Increase Leads by 20%</td>
+<td class="p-4"><span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded text-[10px] font-bold">UPDATE</span></td>
+<td class="p-4">Target Date</td>
+<td class="p-4 text-secondary">30 Jun 2025</td>
+<td class="p-4 text-primary font-medium">31 Aug 2025</td>
+<td class="p-4 text-secondary italic">Project delay approved by VP Sales</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant">11 May 2025, 14:15</td>
+<td class="p-4">System</td>
+<td class="p-4">Kevin Hart</td>
+<td class="p-4">Optimize Cloud Spend</td>
+<td class="p-4"><span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded text-[10px] font-bold">LOCK</span></td>
+<td class="p-4">Status</td>
+<td class="p-4 text-secondary">SUBMITTED</td>
+<td class="p-4 text-primary font-medium">LOCKED</td>
+<td class="p-4 text-secondary italic">Cycle deadline reached</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 text-on-surface-variant">10 May 2025, 11:20</td>
+<td class="p-4">Priya Kapoor</td>
+<td class="p-4">Rahul Mehta</td>
+<td class="p-4">Achieve Revenue Target</td>
+<td class="p-4"><span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded text-[10px] font-bold">LOCK</span></td>
+<td class="p-4">Status</td>
+<td class="p-4 text-secondary">APPROVED</td>
+<td class="p-4 text-primary font-medium">LOCKED</td>
+<td class="p-4 text-secondary italic">Manager override</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<!-- Modal Overlay Layer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-on-background/40 backdrop-blur-sm">
+<!-- Modal Card -->
+<div class="w-[520px] bg-white rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] border border-outline-variant overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="p-card-padding border-l-[6px] border-error flex items-start gap-4">
+<div class="mt-1">
+<span class="material-symbols-outlined text-error text-[32px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Unlock Goal — Admin Action</h3>
+<p class="font-body-sm text-body-sm text-secondary">This action is irreversible and will be logged in the audit trail.</p>
+</div>
+</div>
+<!-- Modal Content -->
+<div class="px-card-padding pb-card-padding space-y-element-gap">
+<!-- Goal Details Box -->
+<div class="bg-surface-container-low rounded-lg p-4 space-y-2 border border-outline-variant">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Employee</span>
+<span class="font-body-md text-body-md font-semibold">Rahul Mehta</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Goal Title</span>
+<span class="font-body-md text-body-md font-medium text-primary">'Achieve Revenue Target'</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Current Status</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-tertiary rounded-full font-label-sm text-label-sm border border-outline-variant">LOCKED</span>
+</div>
+<div class="pt-2 mt-2 border-t border-outline-variant grid grid-cols-2 gap-4">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Locked by</p>
+<p class="font-body-sm text-body-sm">Priya Kapoor (Manager)</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Locked on</p>
+<p class="font-body-sm text-body-sm">10 May 2025</p>
+</div>
+</div>
+</div>
+<!-- Action Details -->
+<div class="flex items-center gap-3 py-2">
+<div class="font-body-md text-body-md text-on-surface">New Status after unlock:</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">arrow_forward</span>
+<span class="px-2 py-0.5 bg-secondary-fixed text-primary rounded-full font-label-sm text-label-sm font-bold border border-primary/20">APPROVED</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-2">info</span>
+                    Employee will be able to edit this goal again.
+                </p>
+<!-- Input Field -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface flex">
+                        Reason for Unlock <span class="text-error ml-1">*</span>
+</label>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg p-3 text-body-md font-body-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="Provide a detailed reason for unlocking this goal. This will be recorded in the audit log." rows="3"></textarea>
+<p class="text-[11px] text-secondary italic">This reason will be visible to all admins and auditors.</p>
+</div>
+<!-- Checkbox -->
+<label class="flex items-center gap-3 cursor-pointer group py-1">
+<input class="w-4 h-4 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">I confirm this is an authorized administrative action</span>
+</label>
+</div>
+<!-- Modal Footer Buttons -->
+<div class="px-card-padding py-4 bg-surface-container-lowest flex items-center justify-between border-t border-outline-variant">
+<button class="px-6 py-2 bg-white border border-outline text-secondary hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors">
+                    Cancel
+                </button>
+<button class="px-6 py-2 bg-error opacity-50 cursor-not-allowed text-on-error rounded-lg font-label-md text-label-md transition-all shadow-sm">
+                    Unlock Goal
+                </button>
+</div>
+<!-- Compliance Footer -->
+<div class="px-card-padding py-3 bg-surface-container-low text-center">
+<p class="text-[11px] font-medium text-on-surface-variant uppercase tracking-tighter">
+                    This action will be logged as: <span class="text-on-surface">Admin Unlock by Raj Sharma at 12 May 2025, 10:32 AM</span>
+</p>
+</div>
+</div>
+</div>
+</body></html>

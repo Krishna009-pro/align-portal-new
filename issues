@@ -1,0 +1,83 @@
+UI/CODEBASE ISSUES REPORT
+
+1) CRITICAL: Employee check-in page does not return JSX from component body
+- File: src/app/(employee)/check-in/page.tsx
+- Evidence:
+  - Component starts without `return (` at function level.
+  - JSX begins directly after state declaration.
+  - First `return (` appears inside a map callback, not as component return.
+- Impact: Page can render undefined / fail at runtime.
+
+2) CRITICAL: Multiple files use <Link> but do not import Link from next/link
+- File: src/app/page.tsx
+- File: src/app/(auth)/login/page.tsx
+- File: src/app/(employee)/goals/page.tsx
+- File: src/app/(employee)/goals/new/step1.tsx
+- File: src/app/(employee)/goals/new/step2.tsx
+- File: src/app/(employee)/goals/new/step3.tsx
+- File: src/app/(manager)/team/page.tsx
+- File: src/app/(manager)/team/review-checkin/page.tsx
+- Impact: Lint/build errors (`Link is not defined`) and broken UI rendering in affected pages.
+
+3) HIGH: Navigation is mostly placeholder and not fully wired
+- Pattern: many links still use `href="#"`
+- Examples:
+  - src/app/(auth)/login/page.tsx
+  - src/app/(employee)/goals/page.tsx
+  - src/app/(employee)/goals/new/step1.tsx
+  - src/app/(employee)/goals/new/step2.tsx
+  - src/app/(employee)/goals/new/step3.tsx
+  - src/app/(manager)/team/review-goals/page.tsx
+- Impact: UI flow is incomplete; screens look connected but user journeys are not functional.
+
+4) MEDIUM: Undefined CSS utility class used
+- Class: `custom-shadow`
+- Used in: src/app/(employee)/goals/page.tsx
+- Not defined in: src/app/globals.css
+- Impact: Intended visual style is not applied consistently.
+
+5) MEDIUM: Home route still uses default Next.js starter UI
+- File: src/app/page.tsx
+- Impact: Visual inconsistency with Align portal design system and product branding.
+
+6) MEDIUM: Character encoding artifacts in visible text
+- Pattern examples:
+  - `â€”` instead of em dash
+  - `Â·` instead of middle dot
+  - some rupee/typographic text appears mojibake-like in source snapshots
+- Affected examples:
+  - src/app/(employee)/check-in/page.tsx
+  - src/app/(employee)/goals/page.tsx
+  - src/app/(employee)/goals/new/step3.tsx
+  - src/app/(manager)/team/review-goals/page.tsx
+- Impact: UI text quality and professionalism degrade.
+
+7) MEDIUM: Lint-reported JSX text/entity issues
+- Examples:
+  - unescaped quotes in text
+  - unescaped apostrophes in text
+- Affected examples:
+  - src/app/(employee)/check-in/page.tsx
+  - src/app/(employee)/goals/page.tsx
+- Impact: Lint fails; potential rendering inconsistencies.
+
+8) LOW: Lint warnings for image optimization
+- Pattern: `<img>` used instead of Next `<Image />`
+- Affected across several pages (employee and manager screens).
+- Impact: Potentially slower LCP and non-optimized image delivery.
+
+9) LOW: Unused variables in wizard steps
+- Affected:
+  - src/app/(employee)/goals/new/step1.tsx
+  - src/app/(employee)/goals/new/step2.tsx
+  - src/app/(employee)/goals/new/step3.tsx
+- Impact: Code cleanliness/readability issue; not user-facing by itself.
+
+10) ENVIRONMENTAL BUILD BLOCKER (observed during audit run)
+- Build failed fetching Google Inter font via next/font in restricted environment.
+- File path in trace: src/app/layout.tsx
+- Impact: Build verification blocked in offline/restricted network contexts.
+
+Notes
+- This file is a report only.
+- No source code was modified during issue identification.

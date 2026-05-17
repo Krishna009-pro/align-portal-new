@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Align — Goal Creation Wizard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-container": "#ffc9b7",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-container": "#1d4ed8",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-fixed": "#001551",
+                        "surface-variant": "#e2e1ed",
+                        "on-secondary-fixed": "#0b1c30",
+                        "background": "#faf8ff",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "secondary": "#505f76",
+                        "surface-container-high": "#e8e7f3",
+                        "on-surface": "#1a1b23",
+                        "outline-variant": "#c4c5d7",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "surface-tint": "#2151da",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "tertiary": "#7f2500",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#54647a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-dim": "#d9d9e5",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3039",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-container-low": "#f3f2fe",
+                        "primary": "#0037b0",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "on-background": "#1a1b23",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-container": "#ededf9",
+                        "surface-container-highest": "#e2e1ed",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary-container": "#cad3ff",
+                        "surface": "#faf8ff",
+                        "tertiary-container": "#a73400",
+                        "outline": "#747686",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "8px",
+                        "element-gap": "12px",
+                        "page-padding": "24px",
+                        "card-padding": "16px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #1a1b23; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { background-color: #0037b0; color: #ffffff; border-left: 4px solid #0037b0; }
+        .custom-card { background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; }
+        .input-standard { border-radius: 6px; border: 1px solid #E2E8F0; padding: 8px 12px; font-size: 14px; }
+        .badge-base { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar (Authority: JSON & Style Guidance) -->
+<aside class="w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline h-screen fixed left-0 top-0 z-40 flex flex-col py-page-padding">
+<div class="px-6 mb-8 flex items-center gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">Align</span>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-l-4 border-primary dark:border-primary-fixed transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="target" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="font-label-md text-label-md">My Goals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-label-md text-label-md">Check-ins</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">My Progress</span>
+</a>
+</nav>
+<div class="mt-auto px-4 border-t border-outline-variant pt-4 mx-2">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of Rahul Mehta, a South Asian male in a business casual shirt, set against a blurred office background. The lighting is soft and natural, emphasizing a professional yet approachable corporate modern aesthetic with high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswnJV1Cz3NMIU4JQFxo8tYueWlrPafqE32hjfeb1vHejsjkANgmbeNAU1Jbe7IiirbsXsc7SKtw4YR70Wz70Ls-AocRZ1JEqRxwf3Pz5-73b_em5725iCiK9lIsgasC987WrqULn75QAJ2mk2gSeWSZEgpuA5VjzsSYO-dHbS_553ctCEklOXmR8sGy6nl2nUp5miCzEyM4SEUiE8Jx3izumToOTXSne-IUgkIoA78XijCl0PiDeakItbEy9eytE57aSTZYltkrU"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Rahul Mehta</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container w-max">EMPLOYEE</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col min-w-0 bg-[#F8FAFC]">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline h-16 flex justify-between items-center px-page-padding sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">My Goals — FY 2025-26</h1>
+<span class="badge-base bg-green-100 text-green-700 rounded-full px-3 py-1 flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    Goal Setting Window Open
+                </span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-secondary hover:bg-surface-container rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 text-secondary hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-page-padding max-w-[1200px] mx-auto w-full">
+<!-- Wizard Step Indicator -->
+<div class="flex items-center justify-center mb-section-gap">
+<div class="flex items-center w-full max-w-2xl">
+<!-- Step 1 -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-green-700">Goal Definition</span>
+</div>
+<div class="h-0.5 flex-1 bg-green-600 -mt-6"></div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mb-2 ring-4 ring-primary-fixed">
+<span class="font-label-md text-label-md">2</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Targets &amp; Weightage</span>
+</div>
+<div class="h-0.5 flex-1 bg-outline-variant -mt-6"></div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center mb-2">
+<span class="font-label-md text-label-md">3</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Review &amp; Submit</span>
+</div>
+</div>
+</div>
+<!-- Main Instruction Card -->
+<div class="custom-card p-card-padding mb-6">
+<h2 class="font-headline-md text-headline-md mb-1">Step 2 — Set Targets &amp; Weightage</h2>
+<p class="font-body-md text-body-md text-secondary">Define the target value and weightage for each goal. Total weightage must equal exactly 100%.</p>
+</div>
+<!-- Goals Table -->
+<div class="custom-card overflow-hidden mb-6">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-4 font-label-md text-label-md text-on-surface w-12 text-center">#</th>
+<th class="p-4 font-label-md text-label-md text-on-surface">Goal Title</th>
+<th class="p-4 font-label-md text-label-md text-on-surface">UoM Type</th>
+<th class="p-4 font-label-md text-label-md text-on-surface">Target</th>
+<th class="p-4 font-label-md text-label-md text-on-surface w-32">Weightage</th>
+<th class="p-4 font-label-md text-label-md text-on-surface w-32">Validation</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-body-md text-body-md text-center">1</td>
+<td class="p-4 font-body-md text-body-md font-medium text-on-surface">Achieve Revenue Target</td>
+<td class="p-4">
+<span class="badge-base bg-blue-100 text-blue-700">MIN</span>
+</td>
+<td class="p-4">
+<input class="input-standard w-full focus:ring-2 focus:ring-primary focus:outline-none" type="text" value="₹ 5,000,000"/>
+</td>
+<td class="p-4">
+<div class="relative">
+<input class="input-standard w-full focus:ring-2 focus:ring-primary" type="text" value="30%"/>
+</div>
+</td>
+<td class="p-4">
+<span class="material-symbols-outlined text-green-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-body-md text-body-md text-center">2</td>
+<td class="p-4 font-body-md text-body-md font-medium text-on-surface">Reduce Customer TAT</td>
+<td class="p-4">
+<span class="badge-base bg-red-100 text-red-700">MAX</span>
+</td>
+<td class="p-4 flex items-center gap-2">
+<input class="input-standard w-20 focus:ring-2 focus:ring-primary" type="text" value="3"/>
+<span class="font-body-sm text-body-sm text-secondary">days</span>
+</td>
+<td class="p-4">
+<input class="input-standard w-full focus:ring-2 focus:ring-primary" type="text" value="25%"/>
+</td>
+<td class="p-4">
+<span class="material-symbols-outlined text-green-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-body-md text-body-md text-center">3</td>
+<td class="p-4 font-body-md text-body-md font-medium text-on-surface">Zero Safety Incidents</td>
+<td class="p-4">
+<span class="badge-base bg-green-100 text-green-700">ZERO</span>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-2 rounded border border-outline-variant opacity-60">
+<span class="font-body-md text-body-md">0 (auto)</span>
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+</td>
+<td class="p-4">
+<input class="input-standard w-full focus:ring-2 focus:ring-primary" type="text" value="25%"/>
+</td>
+<td class="p-4">
+<span class="material-symbols-outlined text-green-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-body-md text-body-md text-center">4</td>
+<td class="p-4 font-body-md text-body-md font-medium text-on-surface">Training Completion</td>
+<td class="p-4">
+<span class="badge-base bg-purple-100 text-purple-700">TIMELINE</span>
+</td>
+<td class="p-4 relative">
+<div class="relative">
+<input class="input-standard w-full pr-10 focus:ring-2 focus:ring-primary" type="text" value="30-Jun-2025"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-secondary text-sm" data-icon="calendar_today">calendar_today</span>
+</div>
+</td>
+<td class="p-4">
+<input class="input-standard w-full border-tertiary focus:ring-2 focus:ring-tertiary" type="text" value="10%"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-sm text-[10px] leading-none">UNSAVED</span>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary whitespace-nowrap">Min 10% required</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Weightage Summary Panel -->
+<div class="custom-card p-6 border-l-4 border-primary">
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md flex items-center gap-2">
+                            Current total: 90% 
+                            <span class="text-tertiary font-medium text-body-md">— 10% still unallocated</span>
+</span>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Goal weightage must equal exactly 100% to proceed to the review stage.</p>
+</div>
+<button class="px-4 py-2 border border-primary text-primary font-label-md rounded-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="magic_button">magic_button</span>
+                        Auto-balance
+                    </button>
+</div>
+<div class="w-full bg-outline-variant h-3 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full transition-all duration-500" style="width: 90%"></div>
+<div class="bg-tertiary-fixed h-full transition-all duration-500" style="width: 10%"></div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Navigation -->
+<footer class="mt-auto bg-surface border-t border-outline-variant p-6 flex flex-col items-end gap-2 sticky bottom-0">
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 border border-outline text-on-surface font-label-md rounded-lg hover:bg-surface-container transition-colors">
+                    Back
+                </button>
+<button class="px-6 py-2.5 bg-slate-200 text-slate-500 font-label-md rounded-lg cursor-not-allowed flex items-center gap-2">
+                    Next: Review
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<p class="font-label-sm text-tertiary">Allocate remaining 10% to continue</p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Align Enterprise Portal - My Goals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffc9b7",
+                        "inverse-on-surface": "#f0f0fb",
+                        "secondary-container": "#d0e1fb",
+                        "primary": "#0037b0",
+                        "outline-variant": "#c4c5d7",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-high": "#e8e7f3",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-primary-container": "#cad3ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1b23",
+                        "on-secondary-container": "#54647a",
+                        "outline": "#747686",
+                        "on-primary-fixed": "#001551",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "background": "#faf8ff",
+                        "tertiary": "#7f2500",
+                        "on-background": "#1a1b23",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-container": "#ededf9",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2e3039",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#1d4ed8",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e1ed",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "surface-bright": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e1ed",
+                        "surface-container-low": "#f3f2fe",
+                        "surface-tint": "#2151da",
+                        "inverse-primary": "#b7c4ff",
+                        "secondary": "#505f76",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434655",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "tertiary-container": "#a73400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "card-padding": "16px",
+                        "page-padding": "24px",
+                        "stack-gap": "8px",
+                        "element-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Sidebar Wrapper -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 bg-surface-container-lowest border-r border-outline-variant flex flex-col py-page-padding space-y-stack-gap">
+<!-- Logo Section -->
+<div class="px-6 mb-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Align</h1>
+<p class="font-label-sm text-label-sm text-secondary opacity-70">Enterprise Portal</p>
+</div>
+<!-- Main Navigation -->
+<nav class="flex-grow px-3 space-y-1">
+<a class="flex items-center px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 bg-primary text-on-primary border-l-4 border-primary-fixed-dim rounded-r-lg font-bold" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="ads_click">ads_click</span>
+<span class="font-label-md text-label-md">My Goals</span>
+</a>
+<a class="flex items-center px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="event_available">event_available</span>
+<span class="font-label-md text-label-md">Check-ins</span>
+</a>
+<a class="flex items-center px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:scale-110 transition-transform" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">My Progress</span>
+</a>
+</nav>
+<!-- Sidebar Footer / Profile -->
+<div class="px-4 mt-auto pt-4 border-t border-outline-variant">
+<div class="flex items-center p-2 rounded-lg bg-surface-container-low mb-2">
+<img alt="Rahul Mehta" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a middle-aged South Asian male employee named Rahul Mehta. He is wearing a crisp white dress shirt and has a warm, confident smile. The background is a soft-focus corporate office setting with clean lines and modern lighting, maintaining a bright and professional enterprise atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC836jM6AllKZfYr8fjrObCwu6vt5CQF0l41b3nzots--9DCwhOJIMqxMinRZGnkyypblZF34q8r-zqVz6OQtnKRme1W6IjebLx0BFX8CQnyQO6XjVbHsaYObu0pULs0JDLXbSCV2Q-j7vnbsDAIwspiSFIjgKafZ_UqbGl1A3tF77gc9ByKxHC_KtQQGGHP7eCdsN0mTlOKYSalX3AsFNqkWnBvHsOr8TDT6kalbZkcHJU2FXQki59JjWvmPOFedHRN0p-7JJFTLQ"/>
+<div class="ml-3 overflow-hidden">
+<p class="font-label-md text-label-md truncate">Rahul Mehta</p>
+<span class="inline-flex items-center rounded-full bg-secondary-container px-2 py-0.5 font-label-sm text-label-sm text-on-secondary-container">Employee</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-2">
+<button class="p-2 text-secondary hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container hover:text-on-error-container rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Viewport Area -->
+<div class="ml-64 flex flex-col min-h-screen">
+<!-- Top App Bar -->
+<header class="h-16 bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center px-page-padding sticky top-0 z-30 custom-shadow">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">My Goals — FY 2025-26</h2>
+</div>
+<div class="flex items-center gap-stack-gap">
+<div class="flex items-center bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full mr-4">
+<span class="relative flex h-2 w-2 mr-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Goal Setting Window Open</span>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="p-page-padding space-y-section-gap">
+<!-- Alert Banner -->
+<div class="flex items-center justify-between p-4 bg-[#FFF7ED] border border-amber-200 rounded-lg custom-shadow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-600" data-icon="warning">warning</span>
+<p class="font-body-md text-body-md text-amber-900">Your goal sheet is not yet submitted. <span class="font-bold">Deadline: 31 May 2025</span></p>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-all shadow-md active:scale-95">
+                    Submit Now
+                </button>
+</div>
+<!-- Summary Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-page-padding">
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant custom-shadow flex items-start justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Goals Created</p>
+<h3 class="font-headline-lg text-headline-lg text-primary">4</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">of 8 maximum</p>
+</div>
+<div class="p-3 bg-primary-fixed rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant custom-shadow flex items-start justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Weightage</p>
+<h3 class="font-headline-lg text-headline-lg text-error">85%</h3>
+<p class="font-body-sm text-body-sm text-error mt-1 font-medium italic">15% remaining</p>
+</div>
+<div class="p-3 bg-error-container rounded-lg text-error">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant custom-shadow flex items-start justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Status</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-md font-label-md bg-secondary-fixed text-on-secondary-fixed">
+                                Draft
+                            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-2">Not submitted yet</p>
+</div>
+<div class="p-3 bg-surface-container rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+</div>
+</div>
+<!-- Goals Table Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant custom-shadow overflow-hidden flex flex-col">
+<div class="px-6 py-5 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md font-bold">My Goal Sheet</h3>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                        Add New Goal
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">#</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Thrust Area</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Goal Title</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">UoM</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Target</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Weightage</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md">1</td>
+<td class="px-6 py-4 font-label-md text-label-md">Sales</td>
+<td class="px-6 py-4 font-body-md text-body-md font-medium">Achieve Revenue Target</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary-fixed text-primary border border-primary/20">MIN</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md">₹50L</td>
+<td class="px-6 py-4 font-label-md text-label-md">30%</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Draft</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md">2</td>
+<td class="px-6 py-4 font-label-md text-label-md">Operations</td>
+<td class="px-6 py-4 font-body-md text-body-md font-medium">Reduce Customer TAT</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-error-container text-error border border-error/20">MAX</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md">3 days</td>
+<td class="px-6 py-4 font-label-md text-label-md">25%</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Draft</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md">3</td>
+<td class="px-6 py-4 font-label-md text-label-md">Compliance</td>
+<td class="px-6 py-4 font-body-md text-body-md font-medium">Zero Safety Incidents</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 border border-green-200">ZERO</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md">0</td>
+<td class="px-6 py-4 font-label-md text-label-md">20%</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Draft</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md">4</td>
+<td class="px-6 py-4 font-label-md text-label-md">HR</td>
+<td class="px-6 py-4 font-body-md text-body-md font-medium">Training Completion</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant border border-tertiary-container/20">TIMELINE</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md">30-Jun-25</td>
+<td class="px-6 py-4 font-label-md text-label-md">10%</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Draft</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Card Footer Summary -->
+<div class="px-6 py-4 bg-surface-container flex flex-col gap-4 border-t border-outline-variant">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-on-surface">Total Weightage: <span class="text-error">85% / 100%</span></span>
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+<span class="font-body-sm text-body-sm">You need to add 15% more weightage to submit.</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar & Final Action -->
+<div class="flex items-center gap-8">
+<div class="flex-grow">
+<div class="w-full bg-outline-variant rounded-full h-2">
+<div class="bg-error h-2 rounded-full transition-all duration-500" style="width: 85%"></div>
+</div>
+</div>
+<div class="relative group">
+<button class="bg-outline text-surface-container-lowest px-6 py-2 rounded-lg font-label-md text-label-md cursor-not-allowed opacity-60" disabled="">
+                                Submit for Approval
+                            </button>
+<!-- Tooltip -->
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-2 bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded shadow-lg invisible group-hover:visible transition-all">
+                                Total weightage must equal 100%
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-inverse-surface"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State / Placeholder for additional content -->
+<div class="bg-surface-container-low border border-dashed border-outline-variant rounded-xl p-12 text-center">
+<div class="mx-auto w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="lightbulb">lightbulb</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Need help with your goals?</h4>
+<p class="font-body-md text-body-md text-secondary max-w-md mx-auto mb-6">Review the organization's FY 2025-26 strategy guide to align your individual contributions with team objectives.</p>
+<button class="border border-primary text-primary hover:bg-primary/5 px-6 py-2 rounded-lg font-label-md text-label-md transition-all">
+                    View Strategy Guide
+                </button>
+</div>
+</main>
+</div>
+</body></html>

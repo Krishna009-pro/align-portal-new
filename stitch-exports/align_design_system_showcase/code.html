@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d0e1fb",
+                        "primary-fixed": "#dce1ff",
+                        "surface-bright": "#faf8ff",
+                        "surface-variant": "#e2e1ed",
+                        "on-secondary-fixed": "#0b1c30",
+                        "inverse-primary": "#b7c4ff",
+                        "inverse-surface": "#2e3039",
+                        "on-surface-variant": "#434655",
+                        "surface-container": "#ededf9",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "outline-variant": "#c4c5d7",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e8e7f3",
+                        "on-primary-container": "#cad3ff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-secondary-container": "#54647a",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-container": "#1d4ed8",
+                        "secondary-fixed": "#d3e4fe",
+                        "secondary": "#505f76",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "tertiary": "#7f2500",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1b23",
+                        "on-primary-fixed": "#001551",
+                        "primary": "#0037b0",
+                        "surface-container-highest": "#e2e1ed",
+                        "outline": "#747686",
+                        "surface": "#faf8ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "background": "#faf8ff",
+                        "tertiary-container": "#a73400",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1b23",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "surface-tint": "#2151da",
+                        "surface-container-low": "#f3f2fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "16px",
+                        "section-gap": "32px",
+                        "page-padding": "24px",
+                        "stack-gap": "8px",
+                        "element-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .card { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 24px; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-page-padding h-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">Align</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 cursor-pointer transition-opacity active:opacity-70" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer transition-opacity active:opacity-70" href="#">Analytics</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer transition-opacity active:opacity-70" href="#">Directory</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer transition-opacity active:opacity-70" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container rounded-full p-2" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container rounded-full p-2" data-icon="help_outline">help_outline</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a corporate executive in a modern office setting. The lighting is soft and even, typical of a bright light-mode UI aesthetic. The background is a slightly blurred architectural interior with clean lines and a palette of whites and soft grays, matching the Align design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4WV3T7s6UsduGUajSFxy3YDRCiSMe6WyQRlsXBqczTy9Mld_gGKEJH48iDlhKJ5C3xLXPlCzq8gnCRcKO8-e3Y4YIFl0upOuIkHCgnnvA14UvByEyHgZh_7C8gx4AcOGBhhOnOa1nc7N6iigaFH-FoLfaG_JGjZlE6rmaeWBrS1xK-BKMAhBIPoRzboJm68CC5PnulmQaow9sDPUPcKYT42g6Wt_uCoUKkXrvSqULBzXxWoxC25jpEOp8XoxutLbgCsn6iHv8AFQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full sticky left-0 top-16 z-40 py-page-padding w-64 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline shrink-0">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold text-lg">A</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant leading-none">Enterprise Portal</h2>
+<p class="font-label-sm text-label-sm text-secondary">Strategic Alignment</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-l-4 border-primary dark:border-primary-fixed active:scale-[0.98] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="target">target</span>
+<span class="font-label-md text-label-md">Goals</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="hub">hub</span>
+<span class="font-label-md text-label-md">Strategic Map</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Team Performance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">Resources</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="archive">archive</span>
+<span class="font-label-md text-label-md">Archived</span>
+</a>
+</nav>
+<div class="px-4 py-6 border-t border-outline-variant space-y-1">
+<button class="w-full bg-primary text-white py-2 rounded-lg font-label-md text-label-md mb-4 active:scale-[0.98] transition-transform">New Goal</button>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-secondary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-secondary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<section class="flex-1 p-page-padding space-y-section-gap overflow-y-auto">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Component Showcase</h1>
+<p class="font-body-md text-body-md text-secondary">A comprehensive guide to the Align design system tokens and components.</p>
+</div>
+<!-- Buttons Section -->
+<div class="card space-y-element-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Buttons</h2>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:brightness-110 active:opacity-70 transition-all">Primary Action</button>
+<button class="px-6 py-2 bg-white border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary-fixed-dim active:opacity-70 transition-all">Secondary Action</button>
+<button class="px-6 py-2 bg-error text-on-error font-label-md text-label-md rounded-lg hover:brightness-110 active:opacity-70 transition-all">Danger Action</button>
+</div>
+</div>
+<!-- Input Fields Section -->
+<div class="card space-y-element-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Input Fields</h2>
+<div class="max-w-md">
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="goal-title">Goal Title</label>
+<input class="w-full h-10 px-3 border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" id="goal-title" placeholder="Enter a descriptive name for your objective" type="text"/>
+<p class="mt-2 font-label-sm text-label-sm text-secondary">Enter a descriptive name for your objective</p>
+</div>
+</div>
+<!-- Badges & Indicators -->
+<div class="card">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Badges &amp; Indicators</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Status -->
+<div class="space-y-4">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Status</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm rounded-full">Draft</span>
+<span class="px-3 py-1 bg-secondary-container text-primary font-label-sm text-label-sm rounded-full">Submitted</span>
+<span class="px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] font-label-sm text-label-sm rounded-full">Approved</span>
+<span class="px-3 py-1 bg-error-container text-error font-label-sm text-label-sm rounded-full">Rejected</span>
+<span class="px-3 py-1 bg-[#F3E5F5] text-[#7B1FA2] font-label-sm text-label-sm rounded-full">Locked</span>
+</div>
+</div>
+<!-- Check-in -->
+<div class="space-y-4">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Check-in</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-secondary font-label-sm text-label-sm rounded-full">Not Started</span>
+<span class="px-3 py-1 bg-[#FFF8E1] text-[#FFA000] font-label-sm text-label-sm rounded-full">On Track</span>
+<span class="px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] font-label-sm text-label-sm rounded-full">Completed</span>
+</div>
+</div>
+<!-- UoM Type -->
+<div class="space-y-4">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider">UoM Type</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-primary font-label-sm text-label-sm rounded-lg">MIN</span>
+<span class="px-3 py-1 bg-error-container text-error font-label-sm text-label-sm rounded-lg">MAX</span>
+<span class="px-3 py-1 bg-[#F3E5F5] text-[#7B1FA2] font-label-sm text-label-sm rounded-lg">TIMELINE</span>
+<span class="px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] font-label-sm text-label-sm rounded-lg">ZERO</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress & Navigation State Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap">
+<!-- Progress Section -->
+<div class="card space-y-element-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Progress Bar</h2>
+<div class="space-y-4">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface">Goal Completion</span>
+<span class="font-label-md text-label-md text-primary">65%</span>
+</div>
+<div class="w-full bg-[#E2E8F0] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<!-- Navigation Showcase -->
+<div class="card space-y-element-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Navigation States</h2>
+<div class="space-y-2 max-w-[240px]">
+<div class="flex items-center gap-3 px-4 py-2 rounded bg-primary text-on-primary border-l-4 border-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard (Active)</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 rounded text-secondary hover:bg-surface-container-low transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings (Inactive)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="card overflow-hidden">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Data Table</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="px-4 py-3 font-label-md text-label-md text-secondary">Goal Name</th>
+<th class="px-4 py-3 font-label-md text-label-md text-secondary">Owner</th>
+<th class="px-4 py-3 font-label-md text-label-md text-secondary">Status</th>
+<th class="px-4 py-3 font-label-md text-label-md text-secondary">Progress</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-[#F1F5F9] transition-colors cursor-pointer group">
+<td class="px-4 py-4 font-body-md text-body-md text-on-surface">Expand Market Share Q4</td>
+<td class="px-4 py-4 font-body-md text-body-md text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">JD</div>
+<span>Jane Doe</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="px-3 py-1 bg-[#FFF8E1] text-[#FFA000] font-label-sm text-label-sm rounded-full">On Track</span>
+</td>
+<td class="px-4 py-4 min-w-[120px]">
+<div class="flex items-center gap-3">
+<div class="flex-1 bg-[#E2E8F0] rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 65%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">65%</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Empty State -->
+<div class="card flex flex-col items-center justify-center py-16 text-center">
+<div class="w-48 h-48 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[80px] text-outline-variant" data-icon="search_off">search_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">No goals found</h3>
+<p class="font-body-md text-body-md text-secondary max-w-sm mb-8">It looks like you haven't set any strategic objectives yet. Start by creating a new goal to track your team's performance.</p>
+<button class="px-8 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:brightness-110 active:scale-[0.98] transition-all">Create New Goal</button>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Hidden on this specific showcase screen as per suppression rules, but styled for future use) -->
+<!-- <button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
+        <span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+    </button> -->
+</body></html>

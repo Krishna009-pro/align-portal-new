@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Align Manager Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#b7c4ff",
+                      "outline": "#747686",
+                      "background": "#faf8ff",
+                      "surface-variant": "#e2e1ed",
+                      "surface-container": "#ededf9",
+                      "on-background": "#1a1b23",
+                      "surface-dim": "#d9d9e5",
+                      "surface-bright": "#faf8ff",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface": "#faf8ff",
+                      "surface-tint": "#2151da",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#2e3039",
+                      "on-secondary-container": "#54647a",
+                      "inverse-primary": "#b7c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#d3e4fe",
+                      "on-error-container": "#93000a",
+                      "on-surface-variant": "#434655",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1a1b23",
+                      "on-tertiary-container": "#ffc9b7",
+                      "on-primary-fixed-variant": "#0039b5",
+                      "surface-container-highest": "#e2e1ed",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "tertiary": "#7f2500",
+                      "on-primary-container": "#cad3ff",
+                      "primary-fixed": "#dce1ff",
+                      "surface-container-high": "#e8e7f3",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#001551",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "surface-container-low": "#f3f2fe",
+                      "primary-container": "#1d4ed8",
+                      "primary": "#0037b0",
+                      "outline-variant": "#c4c5d7",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#f0f0fb",
+                      "tertiary-container": "#a73400",
+                      "on-secondary-fixed": "#0b1c30",
+                      "secondary": "#505f76",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "tertiary-fixed": "#ffdbcf",
+                      "secondary-container": "#d0e1fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "element-gap": "12px",
+                      "section-gap": "32px",
+                      "stack-gap": "8px",
+                      "card-padding": "16px",
+                      "page-padding": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            background-color: #0037b0;
+            color: #ffffff;
+            border-left: 4px solid #b7c4ff;
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-on-surface font-body-md">
+<!-- Shared SideNavBar -->
+<aside class="fixed h-full w-64 left-0 top-0 bg-surface border-r border-outline-variant shadow-sm flex flex-col py-page-padding z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">Align</h1>
+<p class="font-label-sm text-label-sm text-secondary">Enterprise Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 sidebar-active font-bold transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="target">target</span>
+<span class="font-label-md text-label-md">My Team Goals</span>
+</a>
+<a class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="fact_check">fact_check</span>
+<span class="font-label-md text-label-md">Check-in Reviews</span>
+</a>
+<a class="flex items-center px-6 py-3 text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-6 border-t border-outline-variant">
+<div class="flex items-center p-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer">
+<img alt="Priya Kapoor" class="w-10 h-10 rounded-full object-cover mr-3 shadow-sm border border-outline-variant" data-alt="Professional headshot of a female manager named Priya Kapoor in a corporate setting. She is smiling warmly, wearing business formal attire, with a soft, blurred office background. The lighting is bright and professional, adhering to a high-key modern enterprise aesthetic with natural skin tones and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYaox2CuBlqADFRSL5nHKJaqHuhzMRUp_3Aja4QuTZxlWpeKd0JWFWUlI3sscptfMcKZpZlaTPUgBQBziVpAlKy_s5cnh2jzGSp9L-xnWYvVW02JgfC1c_VBAwazkASoNhv8XATF7RnHfq43oD8LwpCQ2Dcp_CU50rCeXSOFVqjjoC0gKyyiCI415NwVLlgnPaNoHwjDAT-L34y6DGeOLrJksXzH0fF_dHblz4_ex-D5Q-uVQamGmI038QyJxMNxS_4JJSmS-N8NY"/>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-label-md truncate text-on-surface">Priya Kapoor</p>
+<p class="font-label-sm text-label-sm text-secondary truncate">Manager</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="settings">settings</span>
+</div>
+</div>
+</aside>
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant z-40 flex justify-between items-center px-page-padding">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Manager Dashboard</h2>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex items-center px-3 py-1 bg-[#E8F5E9] rounded-full">
+<span class="w-2 h-2 rounded-full bg-[#2E7D32] mr-2"></span>
+<span class="font-label-sm text-label-sm text-[#2E7D32] font-semibold">Q1 Window Open</span>
+</div>
+<button class="relative hover:bg-surface-container rounded-full p-2 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen p-page-padding">
+<!-- Row 1: Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-section-gap">
+<!-- Metric 1 -->
+<div class="bg-surface p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined p-2 bg-secondary-container text-on-secondary-container rounded-lg" data-icon="groups">groups</span>
+</div>
+<h3 class="font-label-md text-label-md text-secondary">Total Reportees</h3>
+<div class="flex items-baseline mt-1">
+<span class="text-3xl font-bold text-on-surface">8</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined p-2 bg-amber-50 text-amber-700 rounded-lg" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-100">Action needed</span>
+</div>
+<h3 class="font-label-md text-label-md text-secondary">Awaiting Approval</h3>
+<div class="flex items-baseline mt-1">
+<span class="text-3xl font-bold text-on-surface">3</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined p-2 bg-green-50 text-green-700 rounded-lg" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm bg-green-50 text-green-700 px-2 py-0.5 rounded-full border border-green-100">This cycle</span>
+</div>
+<h3 class="font-label-md text-label-md text-secondary">Goals Approved</h3>
+<div class="flex items-baseline mt-1">
+<span class="text-3xl font-bold text-on-surface">4</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined p-2 bg-red-50 text-error rounded-lg" data-icon="warning">warning</span>
+<span class="font-label-sm text-label-sm bg-red-50 text-error px-2 py-0.5 rounded-full border border-red-100">Q1 overdue</span>
+</div>
+<h3 class="font-label-md text-label-md text-secondary">Check-ins Pending</h3>
+<div class="flex items-baseline mt-1">
+<span class="text-3xl font-bold text-on-surface">5</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Main Content Area -->
+<div class="flex flex-col lg:flex-row gap-6">
+<!-- Left: Team Goal Approval Status -->
+<div class="lg:w-[65%] bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col">
+<div class="px-card-padding py-4 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Team Goal Approval Status</h3>
+<button class="text-primary font-label-md text-label-md flex items-center hover:underline">
+                        Export Report <span class="material-symbols-outlined text-[16px] ml-1" data-icon="download">download</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant">Reportee</th>
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant">Goals</th>
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant">Completion</th>
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant">Last Active</th>
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant">Status</th>
+<th class="px-6 py-3 font-label-md text-label-md text-secondary border-b border-outline-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs mr-3">RM</div>
+<span class="font-body-md text-on-surface">Rahul Mehta</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">5 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">28 Apr</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-amber-50 text-amber-700 text-[11px] font-bold border border-amber-200">Awaiting Approval</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:opacity-90 shadow-sm transition-all active:scale-95">Review</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs mr-3">SP</div>
+<span class="font-body-md text-on-surface">Sneha Patil</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">4 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-green-600 rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">27 Apr</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-green-50 text-green-700 text-[11px] font-bold border border-green-200">Approved</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-white border border-outline-variant text-secondary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:bg-surface-container-low shadow-sm transition-all">View</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-xs mr-3">AK</div>
+<span class="font-body-md text-on-surface">Amit Kumar</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">3 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 85%"></div>
+</div>
+<span class="font-label-sm text-label-sm">85%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">26 Apr</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-red-50 text-error text-[11px] font-bold border border-red-200">Incomplete</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:opacity-90 shadow-sm transition-all">Review</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center font-bold text-xs mr-3">DN</div>
+<span class="font-body-md text-on-surface">Deepa Nair</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">6 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-green-600 rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">25 Apr</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-green-50 text-green-700 text-[11px] font-bold border border-green-200">Approved</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-white border border-outline-variant text-secondary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:bg-surface-container-low shadow-sm transition-all">View</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center font-bold text-xs mr-3">VR</div>
+<span class="font-body-md text-on-surface">Vikram Rao</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">0 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 0%"></div>
+</div>
+<span class="font-label-sm text-label-sm">0%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">—</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-surface-container-low text-secondary text-[11px] font-bold border border-outline-variant">Not Submitted</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-white border border-primary text-primary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:bg-primary-fixed shadow-sm transition-all">Remind</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs mr-3">PS</div>
+<span class="font-body-md text-on-surface">Pooja Shah</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface">5 goals</td>
+<td class="px-6 py-4">
+<div class="flex items-center space-x-2">
+<div class="w-16 h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-label-sm text-label-sm">100%</span>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-secondary">29 Apr</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-2 py-0.5 rounded-md bg-amber-50 text-amber-700 text-[11px] font-bold border border-amber-200">Awaiting Approval</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg font-label-sm text-label-sm hover:opacity-90 shadow-sm transition-all">Review</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto px-6 py-4 bg-surface-container-lowest border-t border-outline-variant flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-secondary">Showing 6 of 8 reportees</p>
+<div class="flex space-x-2">
+<button class="p-1 border border-outline-variant rounded hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-1 border border-outline-variant rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right: Quick Stats & Chart -->
+<div class="lg:w-[35%] flex flex-col gap-6">
+<!-- Status Chart Card -->
+<div class="bg-surface p-card-padding rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Quick Stats</h3>
+<p class="font-label-sm text-label-sm text-secondary">Approval progress for current window</p>
+</div>
+<!-- Donut Chart UI -->
+<div class="relative w-48 h-48 mx-auto mb-8 flex items-center justify-center">
+<!-- Simulated Donut Chart using Conic Gradient -->
+<div class="w-full h-full rounded-full" style="background: conic-gradient(#16a34a 0% 50%, #d97706 50% 87.5%, #94a3b8 87.5% 100%);"></div>
+<!-- Inner Circle for Donut Hole -->
+<div class="absolute inset-8 bg-surface rounded-full flex flex-col items-center justify-center shadow-inner">
+<span class="text-2xl font-extrabold text-on-surface">87%</span>
+<span class="font-label-sm text-label-sm text-secondary">Total Submit</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<span class="w-3 h-3 rounded-full bg-green-600 mr-3"></span>
+<span class="font-body-md text-secondary">Approved</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">50.0%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<span class="w-3 h-3 rounded-full bg-amber-600 mr-3"></span>
+<span class="font-body-md text-secondary">Pending</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">37.5%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<span class="w-3 h-3 rounded-full bg-slate-400 mr-3"></span>
+<span class="font-body-md text-secondary">Not Submitted</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">12.5%</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant text-center">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-1">Upcoming Deadline</p>
+<p class="text-xl font-bold text-error">10 May 2025</p>
+</div>
+</div>
+<!-- Secondary Card: Manager Toolkit -->
+<div class="bg-surface-container p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<h4 class="font-label-md text-label-md font-bold text-primary mb-4">Manager Toolkit</h4>
+<ul class="space-y-3">
+<li class="flex items-center text-on-surface hover:text-primary cursor-pointer group">
+<span class="material-symbols-outlined text-[20px] mr-3 text-secondary group-hover:text-primary" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-body-sm text-body-sm">AI Goal Assistant</span>
+</li>
+<li class="flex items-center text-on-surface hover:text-primary cursor-pointer group">
+<span class="material-symbols-outlined text-[20px] mr-3 text-secondary group-hover:text-primary" data-icon="library_books">library_books</span>
+<span class="font-body-sm text-body-sm">Guideline Documentation</span>
+</li>
+<li class="flex items-center text-on-surface hover:text-primary cursor-pointer group">
+<span class="material-symbols-outlined text-[20px] mr-3 text-secondary group-hover:text-primary" data-icon="history">history</span>
+<span class="font-body-sm text-body-sm">Past Review Cycles</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</body></html>
